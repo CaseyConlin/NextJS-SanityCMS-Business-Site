@@ -9,61 +9,13 @@ import {
   getCarouselData,
 } from "@/sanity/helpers";
 import { Carousel } from "@/components/UI/carousel/Carousel";
-
-import { ContactFooter } from "@/components/UI/ContactFooter";
 import { MWHeading } from "@/components/UI/MWHeading";
-// const items = [
-//   "Poughkeepise",
-//   "New York",
-//   "Brooklyn",
-//   "Manhattan",
-//   "Queens",
-//   "Bronx",
-//   "Staten Island",
-// ];
-
-// export async function generateStaticParams() {
-//     return albums.map((album: albumType) => ({
-//       slug: album.slug,
-//     }));
-//   }
-
-//   export async function generateMetadata({
-//     params,
-//   }: {
-//     params: { slug: string };
-//   }): Promise<Metadata> {
-//     // read route params
-//     const id = params.slug;
-
-//     const albumData = albums.find((album) => {
-//       return album.slug == id;
-//     });
-
-//     // optionally access and extend (rather than replace) parent metadata
-//     // const previousImages = (await parent).openGraph?.images || []
-
-//     return {
-//       title: albumData?.title,
-//       description: albumData?.metaDescription,
-//       // openGraph: {
-//       //   images: ['/some-specific-page-image.jpg', ...previousImages],
-//       // },
-//     };
-//   }
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
-  console.log(slug);
   const PROJET_QUERY = `*[_type == "project" && slug.current == "/work/${slug}"]`;
 
   const projectData = await sanityFetchData(PROJET_QUERY);
-
-  // const CATS_QUERY = `*[_type == 'project' && (${projectData[0].category
-  //   .map((t: string) => `'${t}' in category`)
-  //   .join(" || ")})]`;
-
-  // const catData = await sanityFetchData(CATS_QUERY);
 
   const imageGallery = projectData[0].imagesGallery.map(
     (image: SanityDocument) => {
@@ -120,7 +72,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         sectionTitle={`More ${catTitle} Work`}
         slidesData={catProjectData}
       />
-      <ContactFooter />
     </>
   );
 }

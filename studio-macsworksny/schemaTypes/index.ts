@@ -6,6 +6,7 @@ import {indexPageType} from './indexPageType'
 import {projectType} from './projectType'
 import {serviceType} from './serviceType'
 import {clientType} from './clientType'
+import {ourWorkType} from './ourWorkType'
 
 export const schemaTypes = [
   postType,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   projectType,
   serviceType,
   clientType,
+  ourWorkType,
 ]

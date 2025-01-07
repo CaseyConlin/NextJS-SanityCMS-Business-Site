@@ -1,17 +1,33 @@
+"use client";
+import { usePathname } from "next/navigation";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { MWHeading } from "./MWHeading";
-import { ContactForm } from "./contactForm/ContactForm";
-import { ContactInfo } from "./contactForm/ContactInfo";
+import { MWHeading } from "../MWHeading";
+import { ContactForm } from "../contactForm/ContactForm";
+import { ContactInfo } from "../contactForm/ContactInfo";
+import { PortableTextBody } from "@/sanity/PortableTextBody";
+import { SanityDocument } from "next-sanity";
 
-export const ContactFooter = () => {
+type ContactFooterProps = {
+  title: string;
+  subtitle: string;
+  description: SanityDocument;
+  image: string;
+};
+export const ContactFooter = ({
+  title,
+  subtitle,
+  description,
+  image,
+}: ContactFooterProps) => {
+  if (usePathname() === "/contact") return null;
   return (
     <Container
       maxWidth={false}
       sx={{
-        backgroundImage: "url(/USB-Blog-Steel-Bridge-Structures.jpg)",
+        backgroundImage: `url(${image})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         p: 5,
@@ -43,20 +59,12 @@ export const ContactFooter = () => {
               component="h2"
               color="black"
               fontWeight={400}
-              text="Let’s Work on Your Next Project"
+              text={title}
               styleProps={{ py: 2 }}
             />
           </Box>
           <Box sx={{ gridRow: "2", gridColumn: "1/2" }}>
-            <Typography color="black" pt={2}>
-              At Macs Works, we bring precision and artistry to every steel
-              project, from fabrication and staircases to railings and
-              ornamental work. Specializing in residential and commercial
-              builds, we’re committed to completing each project on time, within
-              budget, and with a strong focus on safety. Whether you&apos;re
-              creating new structures or enhancing existing ones, we’re here to
-              bring your vision to life with quality and dependability.
-            </Typography>
+            <PortableTextBody text={description} />
             <Typography color="black" pt={2}>
               <b>William Staesser</b>, Owner/Operator
             </Typography>
@@ -82,7 +90,7 @@ export const ContactFooter = () => {
                 color="mwOrange"
                 fontWeight={700}
                 fontSize="1.5rem"
-                text="Request a Quote"
+                text={subtitle}
                 styleProps={{ py: 2 }}
               />
               <ContactForm />

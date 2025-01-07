@@ -1,5 +1,5 @@
 "use client";
-import * as React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,15 +14,45 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Grid from "@mui/material/Grid2";
-import { LogoTagLine } from "../LogoTagLine";
+import { LogoTagLine } from "../../LogoTagLine";
 import Link from "next/link";
-
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { NavBarDropDownButton } from "./NavBarDropDownButton";
+import { NavBarButton } from "./NavBarButton";
 const pages = [
-  { name: "Services", link: "services" },
-  { name: "Our Work", link: "work" },
-  { name: "Our Clients", link: "clients" },
-  { name: "About", link: "about" },
-  { name: "Contact", link: "contact" },
+  {
+    name: "Services",
+    url: "services",
+    pages: [
+      { name: "bridges", link: "bridges" },
+      { name: "structural-steel", link: "structural-steel" },
+      { name: "staircases", link: "staircases" },
+      { name: "railings", link: "railings" },
+    ],
+  },
+  {
+    name: "Our Work",
+    url: "work",
+    pages: [
+      { name: "bridges", link: "bridges" },
+      { name: "structural-steel", link: "structural-steel" },
+      { name: "staircases", link: "staircases" },
+      { name: "railings", link: "railings" },
+    ],
+  },
+  {
+    name: "Our Clients",
+    url: "clients",
+    pages: [
+      { name: "municipalities", link: "municipalities" },
+      { name: "contractors", link: "contractors" },
+      { name: "developers", link: "developers" },
+      { name: "architects", link: "architects" },
+      { name: "homeowners", link: "homeowners" },
+    ],
+  },
+  { name: "About", url: "about" },
+  { name: "Contact", url: "contact" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -33,9 +63,19 @@ function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const [openNav, setOpenNav] = useState<null | string>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -162,21 +202,20 @@ function NavBar() {
                 mr={10}
               >
                 {pages.map((page) => (
-                  <Link key={page.link} href={page.link}>
-                    <Button
-                      color="mwOrange"
-                      onClick={handleCloseNavMenu}
-                      sx={{
-                        fontSize: "1.125rem",
-                        my: 2,
-                        display: "block",
-                        color: "mwOrange",
-                        "&:hover": { color: "white!important" },
-                      }}
-                    >
-                      {page.name}
-                    </Button>
-                  </Link>
+                  // <Link key={page.link} href={page.link}>
+                  <div key={page.url}>
+                    {page.pages ? (
+                      <NavBarDropDownButton
+                        page={page}
+                        anchorElNav={anchorElNav}
+                        handleOpenNavMenu={handleOpenNavMenu}
+                        handleCloseNavMenu={handleCloseNavMenu}
+                      />
+                    ) : (
+                      NavBarButton({ page })
+                    )}
+                  </div>
+                  // </Link>
                 ))}
               </Box>
             </Box>

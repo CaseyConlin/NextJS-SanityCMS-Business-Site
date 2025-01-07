@@ -1,6 +1,5 @@
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 import { ServiceHeader } from "@/components/pages/services/ServiceHeader";
-import { ContactFooter } from "@/components/UI/ContactFooter";
 import {
   sanityFetchData,
   sanityUrlFor,
@@ -46,7 +45,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         body={workTitleBody}
         portfolioData={catProjectData}
       />
-      <ContactFooter />
     </>
   );
 }
