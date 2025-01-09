@@ -9,7 +9,7 @@ type NavBarDropDownButtonProps = {
   page: {
     name: string;
     url: string;
-    pages: { name: string; link: string }[];
+    pages?: { name: string; link: string }[];
   };
   anchorElNav: null | HTMLElement;
   handleOpenNavMenu: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -26,7 +26,6 @@ export const NavBarDropDownButton = ({
     <>
       <Button
         color="mwOrange"
-        // onMouseEnter={handleOpenNavMenu}
         id={`${page.url}-button`}
         aria-controls={
           anchorElNav?.id == `${page.url}-button`
@@ -59,7 +58,6 @@ export const NavBarDropDownButton = ({
       </Button>
 
       <Menu
-        // open={true}
         onClose={handleCloseNavMenu}
         id={`${page.url}-menu`}
         anchorEl={anchorElNav?.id == `${page.url}-button` ? anchorElNav : null}
@@ -76,12 +74,9 @@ export const NavBarDropDownButton = ({
         MenuListProps={{
           "aria-labelledby": `${page.url}-button`,
         }}
-        // sx={{
-        //   display: { xs: "block", md: "none", color: "red" },
-        // }}
         open={anchorElNav?.id == `${page.url}-button`}
       >
-        {page.pages.map((subPage) => (
+        {page.pages?.map((subPage) => (
           <MenuItem
             key={`${page.url}-${subPage.link}`}
             onClick={handleCloseNavMenu}

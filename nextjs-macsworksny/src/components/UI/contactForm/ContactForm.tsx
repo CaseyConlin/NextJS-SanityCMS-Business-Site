@@ -65,7 +65,12 @@ export const ContactForm = () => {
     <Box
       component="form"
       // sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}
-      sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        paddingBottom: { xs: 5, md: 0 },
+      }}
       onSubmit={handleSubmit(submitForm)}
     >
       {submitted ? (

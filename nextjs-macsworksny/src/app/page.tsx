@@ -53,24 +53,15 @@ export default async function IndexPage() {
     };
   });
 
-  // const {
-  //   contactFooterTitle,
-  //   contactFooterSubtitle,
-  //   contactFooterDescription,
-  // } = indexData[0];
-  // const contactFooterImage =
-  //   (await sanityUrlFor(indexData[0].contactFooterImage.image.asset)?.url()) ||
-  //   "";
-  // console.log("contactFooterImage", contactFooterImage);
-
   const projectData = await getCarouselDataAll(15);
   const schemaData = getJSONLD();
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      ></script>
+      />
       <main>
         <HomeExpandingHeader quarters={heroImagesData} />
         <HomeAbout
