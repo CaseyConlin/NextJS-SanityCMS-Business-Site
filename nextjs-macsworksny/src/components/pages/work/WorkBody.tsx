@@ -112,7 +112,7 @@ export const WorkBody = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             flexDirection: "column",
-            borderLeft: "1px solid #F66A1F",
+            borderLeft: "1px solid #FF6600",
             pl: 4,
             flex: 2 / 3,
           }}

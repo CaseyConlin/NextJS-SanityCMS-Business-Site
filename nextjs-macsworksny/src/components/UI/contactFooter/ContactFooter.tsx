@@ -51,8 +51,9 @@ export const ContactFooter = ({
             display: "grid",
             gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
             columnGap: 5,
-            rowGap: 5,
-            px: 3,
+            rowGap: { xs: 1, md: 5 },
+            px: { xs: 1, md: 3 },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
           <Box sx={{ gridRow: "1", gridColumn: { sm: 1, md: "1/3" } }}>
@@ -62,7 +63,11 @@ export const ContactFooter = ({
               color="black"
               fontWeight={400}
               text={title}
-              styleProps={{ py: 2 }}
+              styleProps={{
+                py: { xs: 1, md: 2 },
+                fontSize: { xs: "2rem", md: "2rem" },
+                textAlign: { xs: "center", md: "left" },
+              }}
             />
           </Box>
           <Box sx={{ gridRow: "2", gridColumn: { sm: 1, md: "1/2" } }}>
@@ -98,7 +103,7 @@ export const ContactFooter = ({
                 fontWeight={700}
                 fontSize="1.5rem"
                 text="Request a Quote"
-                styleProps={{ py: 2 }}
+                styleProps={{ py: { xs: 4, md: 2 } }}
               />
               <ContactForm />
             </Grid>

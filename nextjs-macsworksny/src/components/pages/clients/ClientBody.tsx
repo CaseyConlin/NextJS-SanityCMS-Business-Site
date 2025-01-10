@@ -54,7 +54,7 @@ export const ClientBody = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             flexDirection: "column",
-            borderRight: "1px solid #F66A1F",
+            borderRight: "1px solid #FF6600",
             pr: 4,
             flex: 5 / 8,
           }}

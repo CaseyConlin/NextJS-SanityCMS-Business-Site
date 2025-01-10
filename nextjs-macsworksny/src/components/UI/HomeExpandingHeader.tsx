@@ -25,6 +25,7 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
       sx={{
         width: "100%",
         display: "flex",
+        flexDirection: { xs: "column", md: "row" },
         columnGap: "1px",
       }}
     >
@@ -36,8 +37,8 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
           onMouseLeave={() => setHovered(undefined)}
           data-hovered={quarter.id}
           style={{
-            flex: hovered && hovered === quarter.id ? "2" : "1",
-            height: "100vh",
+            flex: hovered && hovered === quarter.id ? 2 : 1,
+            height: window.innerWidth < 900 ? "20vh" : "100vh",
             transition: "all .5s",
             display: "flex",
             alignItems: "flex-start",
@@ -46,12 +47,9 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
         >
           <Box
             component="div"
-            // onMouseEnter={(e) => setHovered(e.currentTarget.dataset.hovered)}
-            // onMouseLeave={() => setHovered(undefined)}
-            // data-hovered={quarter.id}
             sx={{
               flex: hovered && hovered === quarter.id ? "2" : "1",
-              height: "100vh",
+              height: { xs: "20vh", md: "100vh" },
               transition: "all .5s",
               display: "flex",
               alignItems: "flex-start",
@@ -76,7 +74,9 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
             <Box
               sx={{
                 position: "absolute",
-                transform: "rotate(-90deg)",
+                transform: { xs: "none", md: "rotate(-90deg)" },
+                mt: { xs: "12vh", md: "unset" },
+                left: { xs: "2vw", md: "unset" },
                 transformOrigin: "bottom right",
               }}
             >
@@ -84,7 +84,7 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
                 variant="h4"
                 color="mwOrange"
                 fontWeight={900}
-                fontSize={"4rem"}
+                fontSize={{ xs: "2rem", md: "4rem" }}
               >
                 {quarter.title}
               </Typography>

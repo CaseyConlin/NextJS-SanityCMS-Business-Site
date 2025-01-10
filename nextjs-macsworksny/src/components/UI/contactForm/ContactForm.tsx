@@ -95,7 +95,13 @@ export const ContactForm = () => {
             autocomplete="fname"
             label="Your Name"
           />
-          <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              gap: 2,
+            }}
+          >
             <FormInputText
               name="email"
               control={control}

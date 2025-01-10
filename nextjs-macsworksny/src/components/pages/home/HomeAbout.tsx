@@ -22,6 +22,7 @@ export const HomeAbout = ({ title, text, link }: HomeAboutProps) => {
         backgroundSize: "100vw 10vh",
         background: "#fff url(/patinabg.webp) no-repeat left bottom",
         mt: 15,
+        p: { xs: 1, md: 2 },
       }}
     >
       <Container maxWidth={"xl"} sx={{}}>
@@ -30,24 +31,45 @@ export const HomeAbout = ({ title, text, link }: HomeAboutProps) => {
             width: "100%",
             display: "grid",
             gridTemplateColumns: "repeat(6, 1fr)",
-            gap: 1,
-            padding: 3,
+            gap: { xs: 4, md: 1 },
+            padding: { xs: 1, md: 3 },
           }}
         >
           <Box
             sx={{
               gridRow: "1",
-              gridColumn: "1/3",
+              gridColumn: { xs: "1/7", md: "1/3" },
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              mt: { xs: 3, md: 0 },
             }}
           >
             <Image src={MWLightLogo} alt="MWLogo" />
           </Box>
-          <Box sx={{ gridRow: "1", gridColumn: "3/7" }}>
-            <MWHeading variant="h2" component={"h2"} text={title}></MWHeading>
-            <PortableTextBody text={text} />
+          <Box
+            sx={{
+              gridRow: { xs: "2", md: "1" },
+              gridColumn: { xs: "1/7", md: "3/7" },
+              display: { xs: "flex", md: "unset" },
+              justifyContent: { xs: "center", md: "unset" },
+              alignItems: { xs: "center", md: "unset" },
+              flexDirection: { xs: "column", md: "unset" },
+            }}
+          >
+            <MWHeading
+              variant="h2"
+              component={"h2"}
+              styleProps={{
+                textAlign: { xs: "center", md: "left" },
+                fontSize: { xs: "1.5rem", md: "2rem" },
+              }}
+              text={title}
+            ></MWHeading>
+            <PortableTextBody
+              text={text}
+              styleProps={{ textAlign: { xs: "center", md: "left" } }}
+            />
             <MWButton
               text="Learn More"
               link={link}

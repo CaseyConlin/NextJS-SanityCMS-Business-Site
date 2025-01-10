@@ -87,7 +87,7 @@ theme = createTheme(theme, {
   palette: {
     mwOrange: theme.palette.augmentColor({
       color: {
-        main: "#F66A1F",
+        main: "#FF6600",
       },
       name: "mwOrange",
     }),
