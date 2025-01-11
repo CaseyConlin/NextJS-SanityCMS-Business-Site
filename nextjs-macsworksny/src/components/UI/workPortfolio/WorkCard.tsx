@@ -22,7 +22,7 @@ export const WorkCard = ({
     <Box
       sx={{
         position: "relative",
-        flex: "0 0 31%",
+        flex: { xs: "0 0 100%", md: "0 0 31%" },
         height: "354px",
         display: "flex",
         alignItems: "center",
@@ -36,7 +36,6 @@ export const WorkCard = ({
           top: "60%",
           left: 0,
           color: "white",
-
           fontFamily: "Roboto",
         }}
       >

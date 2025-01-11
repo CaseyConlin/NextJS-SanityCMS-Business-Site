@@ -56,7 +56,7 @@ export const ContactFooter = ({
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Box sx={{ gridRow: "1", gridColumn: { sm: 1, md: "1/3" } }}>
+          <Box sx={{ gridRow: "1", gridColumn: { xs: 1, md: "1/3" } }}>
             <MWHeading
               variant="h2"
               component="h2"
@@ -70,7 +70,7 @@ export const ContactFooter = ({
               }}
             />
           </Box>
-          <Box sx={{ gridRow: "2", gridColumn: { sm: 1, md: "1/2" } }}>
+          <Box sx={{ gridRow: "2", gridColumn: { xs: 1, md: "1/2" } }}>
             <PortableTextBody text={description} />
             <Typography color="black" pt={2}>
               <b>William Staesser</b>, Owner/Operator
@@ -92,7 +92,7 @@ export const ContactFooter = ({
           <Box
             sx={{
               gridRow: { xs: "3", md: "2" },
-              gridColumn: { sm: 1, md: "2/3" },
+              gridColumn: { xs: 1, md: "2/3" },
             }}
           >
             <Grid size={{ xs: 12, md: 6 }}>

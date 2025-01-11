@@ -39,7 +39,7 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
           style={{
             flex: hovered && hovered === quarter.id ? 2 : 1,
             height: window.innerWidth < 900 ? "20vh" : "100vh",
-            transition: "all .5s",
+            transition: "all .5s ease",
             display: "flex",
             alignItems: "flex-start",
             justifyContent: "flex-end",
@@ -50,7 +50,7 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
             sx={{
               flex: hovered && hovered === quarter.id ? "2" : "1",
               height: { xs: "20vh", md: "100vh" },
-              transition: "all .5s",
+              transition: "all .5s ease",
               display: "flex",
               alignItems: "flex-start",
               justifyContent: "flex-end",
@@ -65,9 +65,12 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
               style={{
                 objectFit: "cover",
                 width: "100%",
+                transition: "all .25s ease",
                 height: "100%",
                 filter:
-                  hovered && hovered === quarter.id ? "" : "saturate(10%)",
+                  hovered && hovered === quarter.id
+                    ? ""
+                    : "grayscale(1) brightness(.7)",
               }}
               sizes={"100%"}
             />

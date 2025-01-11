@@ -1,20 +1,9 @@
 "use client";
-
-// import { useContext } from "react";
 import Image from "next/image";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-// import Grid from "@mui/material/Grid"; // Grid version 2
 import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-
-import { YouTube } from "@mui/icons-material";
-import { FacebookOutlined } from "@mui/icons-material";
-
-// import { NavMenuContext } from "./context/navMenuContext";
-
-// import bg from "../../public/bulldozerseaguls.webp";
 import mwLogo from "../../public/mw-logo-big-half-white-black-text.webp";
 import footerpatina from "../../public/footer-patination.webp";
 import { ContactInfo } from "./UI/contactForm/ContactInfo";
@@ -28,12 +17,6 @@ const pages = [
 ];
 
 export const Footer = () => {
-  //   const { setHideNavState } = useContext(NavMenuContext);
-
-  //   const linkClickHandler = () => {
-  //     setHideNavState(false);
-  //   };
-
   return (
     <Grid
       container
@@ -41,9 +24,7 @@ export const Footer = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        // backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${bg.src})`,
         backgroundImage: `url(${footerpatina.src})`,
-        // height: 450,
         objectFit: "cover",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -57,7 +38,7 @@ export const Footer = () => {
           container
           sx={{
             justifyContent: "center",
-            width: "85vw",
+            width: { xs: "100vw", md: "85vw" },
             alignItems: "center",
             flexDirection: "column",
           }}
@@ -68,11 +49,11 @@ export const Footer = () => {
           <Grid
             py={0}
             my={0}
-            //   xs={4}
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
             {pages.map((page) => (

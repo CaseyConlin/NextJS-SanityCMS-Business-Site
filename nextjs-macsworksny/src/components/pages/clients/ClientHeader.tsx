@@ -2,7 +2,6 @@ import Image from "next/image";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-// import bgImage from "../../../../public/topic-golden-gate-bridge-gettyimages-177770941.jpg";
 
 type ClientHeaderProps = {
   leadin: string;
@@ -25,7 +24,10 @@ export const ClientHeader = ({
         src={image}
         alt={alt}
         fill
-        style={{ filter: "grayscale(100%)", objectFit: "cover" }}
+        style={{
+          filter: "grayscale(100%) brightness(70%)",
+          objectFit: "cover",
+        }}
       />
       <Container maxWidth="xl" sx={{ p: 4 }}>
         <Box

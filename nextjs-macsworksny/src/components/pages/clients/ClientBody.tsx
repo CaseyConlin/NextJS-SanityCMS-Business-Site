@@ -4,19 +4,9 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Typography from "@mui/material/Typography";
 import ChecklistIcon from "@mui/icons-material/Checklist";
 
 import { MWHeading } from "../../UI/MWHeading";
-
-// const features = [
-//   "feature 1 lorem ipsum dolor sit amet",
-//   "feature 2 lorem ipsum dolor sit amet",
-//   "feature 3 lorem ipsum dolor sit amet",
-//   "feature 4 lorem ipsum dolor sit amet",
-//   "feature 5 lorem ipsum dolor sit amet",
-//   "feature 6 lorem ipsum dolor sit amet",
-// ];
 
 type ClientBodyProps = {
   title1: string;

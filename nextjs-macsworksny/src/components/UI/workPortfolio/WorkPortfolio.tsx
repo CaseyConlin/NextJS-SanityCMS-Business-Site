@@ -1,69 +1,8 @@
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import { WorkCard, WorkCardProps } from "./WorkCard";
-import Bridge from "../../../../public/little_steelbridge_7285.jpg";
 import { MWHeading } from "../MWHeading";
 import { PortableTextBody } from "@/sanity/PortableTextBody";
 import { SanityDocument } from "next-sanity";
-
-// const work = [
-//   {
-//     id: 1,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 2,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 3,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 4,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 5,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 6,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 7,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-//   {
-//     id: 8,
-//     name: "Mid-Hudson Bridge",
-//     location: "Poughkeepsie, NY",
-//     link: "/",
-//     image: Bridge,
-//   },
-// ];
 
 export interface WorkPortfolioCardProps extends WorkCardProps {
   id: string;
@@ -86,17 +25,19 @@ export const WorkPortfolio = ({
         variant="h2"
         color="white"
         text={title}
-        fontSize="3rem"
         fontWeight={800}
-        styleProps={{ marginLeft: 5 }}
+        styleProps={{
+          fontSize: { xs: "1.75rem", md: "3rem" },
+          marginLeft: { xs: 0, md: 5 },
+        }}
       />
       <PortableTextBody
         styleProps={{
           color: "#fff",
-          width: "60%",
+          width: { xs: "100%", md: "60%" },
           pt: 3,
           pb: 8,
-          marginLeft: 5,
+          marginLeft: { xs: 0, md: 5 },
         }}
         text={body}
       />
