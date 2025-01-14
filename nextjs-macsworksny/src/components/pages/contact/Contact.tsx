@@ -44,7 +44,12 @@ export const Contact = () => {
           text={"Contact Macs Iron Works"}
           styleProps={{ textAlign: "center", alignSelf: "center" }}
         ></MWHeading>
-        <Typography variant="body1" py={1} textAlign={"center"} width={"65%"}>
+        <Typography
+          variant="body1"
+          py={1}
+          textAlign={"center"}
+          width={{ xs: "100%", md: "65%" }}
+        >
           We specialize in structural steel, custom staircases, railings,
           bridges, and ornamental steelwork, working closely with our clients to
           deliver high-quality, durable, and visually stunning results. Have a
@@ -73,7 +78,7 @@ export const Contact = () => {
           maxWidth="xl"
           sx={{
             backgroundColor: "rgba(255, 255, 255, 0.85)",
-            padding: 5,
+            padding: { xs: 0, md: 5 },
             color: "white",
             display: "flex",
           }}
@@ -83,20 +88,24 @@ export const Contact = () => {
               width: "100%",
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
-              columnGap: 5,
-              px: 3,
-
+              columnGap: { xs: 0, md: 5 },
+              px: { xs: 0, md: 3 },
               pt: 4,
             }}
           >
-            <Box sx={{ gridColumn: "1/2", pt: 3 }}>
+            <Box sx={{ gridColumn: { xs: "1/3", md: "1/2" }, pt: 3 }}>
               <ContactInfo
                 orientation="column"
                 sizing="large"
                 spacing="large"
               />
             </Box>
-            <Box sx={{ gridColumn: "2/3" }}>
+            <Box
+              sx={{
+                gridColumn: { xs: "1/3", md: "2/3" },
+                pt: { xs: 5, md: 3 },
+              }}
+            >
               <Grid size={{ xs: 12, md: 6 }}>
                 <MWHeading
                   variant="h3"
@@ -105,7 +114,10 @@ export const Contact = () => {
                   fontWeight={700}
                   fontSize="1.5rem"
                   text="Request a Quote"
-                  styleProps={{ pb: 2 }}
+                  styleProps={{
+                    pb: 2,
+                    textAlign: { xs: "center", md: "left" },
+                  }}
                 />
                 <ContactForm />
               </Grid>

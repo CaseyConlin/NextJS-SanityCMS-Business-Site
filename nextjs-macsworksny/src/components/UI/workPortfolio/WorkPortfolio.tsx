@@ -19,7 +19,7 @@ export const WorkPortfolio = ({
   portfolioData,
 }: WorkPortfolioProps) => {
   return (
-    <Container maxWidth={"xl"} sx={{ my: 10 }}>
+    <Container maxWidth={"xl"} sx={{ my: { xs: 10 } }}>
       <MWHeading
         component="h2"
         variant="h2"
@@ -36,7 +36,7 @@ export const WorkPortfolio = ({
           color: "#fff",
           width: { xs: "100%", md: "60%" },
           pt: 3,
-          pb: 8,
+          pb: { xs: 2, md: 8 },
           marginLeft: { xs: 0, md: 5 },
         }}
         text={body}

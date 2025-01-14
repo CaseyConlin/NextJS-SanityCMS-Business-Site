@@ -23,14 +23,15 @@ export const AboutHeader = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: -38,
+            bottom: { xs: "15%", md: -38 },
           }}
         >
           <Typography
             component={"h1"}
             color="mwOrange"
             fontWeight={900}
-            fontSize={"6rem"}
+            fontSize={{ xs: "3.5rem", md: "6rem" }}
+            lineHeight={1}
             textAlign={"center"}
           >
             About Macs Iron Works

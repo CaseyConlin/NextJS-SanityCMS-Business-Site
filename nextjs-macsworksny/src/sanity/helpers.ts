@@ -35,7 +35,7 @@ export const getCarouselData = async (cats: string[], field: string) => {
     )})]|order(publishedAt desc)[0...12]{_id, title, location, imagesGallery[0], slug}`;
 
   const catData = await sanityFetchData(CATS_QUERY);
-  console.log("catData", catData);
+
   return catData.map((catDataItem: SanityDocument) => ({
     id: catDataItem._id,
     title: catDataItem.title,

@@ -6,7 +6,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const OUR_WORK_QUERY = `*[_type == "ourWork" && slug.current == "${slug}"]`;
 
   const ourWorkData = await sanityFetchData(OUR_WORK_QUERY);
-  console.log(ourWorkData);
 
   const { title, body } = ourWorkData[0];
 

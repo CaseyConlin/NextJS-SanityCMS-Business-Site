@@ -47,11 +47,16 @@ export const ContactInfo = ({
     <Box
       sx={{
         width: "100%",
-        display: "grid",
+        display: { xs: "flex", md: "grid" },
+        flexDirection: "column",
+        alignItems: "center",
         gridTemplateColumns:
           orientation === "row" ? "repeat(4, 1fr)" : "repeat(1, 1fr)",
         columnGap: 2,
-        rowGap: orientation === "row" ? 2 : spacing === "large" ? 3 : 0,
+        rowGap: {
+          xs: 1,
+          md: orientation === "row" ? 2 : spacing === "large" ? 3 : 0,
+        },
       }}
     >
       <Box

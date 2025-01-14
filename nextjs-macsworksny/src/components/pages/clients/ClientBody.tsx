@@ -31,11 +31,11 @@ export const ClientBody = ({
         maxWidth={"xl"}
         sx={{
           display: "flex",
-          flexDirection: "row",
-          gap: 10,
-          p: 5,
-          pb: 5,
-          my: 15,
+          flexDirection: { xs: "column", md: "row" },
+          gap: { xs: 4, md: 10 },
+          p: { xs: 1, md: 5 },
+          pb: { xs: 5, md: 5 },
+          my: { xs: 0, md: 15 },
         }}
       >
         <Box
@@ -44,8 +44,8 @@ export const ClientBody = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             flexDirection: "column",
-            borderRight: "1px solid #FF6600",
-            pr: 4,
+            borderRight: { xs: "none", md: "1px solid #FF6600" },
+            pr: { xs: 0, md: 4 },
             flex: 5 / 8,
           }}
         >
@@ -54,6 +54,7 @@ export const ClientBody = ({
             color="mwOrange"
             text={title1}
             fontWeight={400}
+            styleProps={{ fontSize: { xs: "1.5rem", md: "2.25rem" } }}
           />
 
           <PortableTextBody text={body1} />
@@ -91,7 +92,7 @@ export const ClientBody = ({
               text="Services We Provide"
               icon={<ChecklistIcon />}
               fontWeight={500}
-              fontSize="2rem"
+              styleProps={{ fontSize: { xs: "1.5rem", md: "2rem" } }}
             />
             <List sx={{ listStyleType: "disc" }}>
               {services.map((service, index) => (
@@ -100,7 +101,7 @@ export const ClientBody = ({
                   sx={{
                     fontWeight: 600,
                     display: "list-item",
-                    ml: 5,
+                    ml: { xs: 3, md: 5 },
                     pl: 0,
                     pb: 0,
                   }}

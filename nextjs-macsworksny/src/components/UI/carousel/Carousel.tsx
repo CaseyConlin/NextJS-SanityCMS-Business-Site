@@ -112,14 +112,18 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
   };
 
   return (
-    <Box py={10}>
-      <Container maxWidth={"xl"} sx={{ pt: 5 }}>
+    <Box py={{ xs: 5, md: 0 }}>
+      <Container maxWidth={"xl"} sx={{ pt: { xs: 1, md: 0 } }}>
         <MWHeading
           variant="h2"
           component="h2"
           text={sectionTitle}
           color="white"
-          styleProps={{ pb: 1, textTransform: "capitalize" }}
+          styleProps={{
+            pb: 1,
+            textTransform: "capitalize",
+            fontSize: { xs: "1.5rem", md: "2.25rem" },
+          }}
         />
       </Container>
       <Box
@@ -131,7 +135,7 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
           position: "relative",
           width: "100%",
           overflow: "hidden",
-          pb: 5,
+          pb: { xs: 2, md: 5 },
         }}
       >
         {showNavigation && (

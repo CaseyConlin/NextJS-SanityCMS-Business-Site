@@ -18,7 +18,7 @@ export const ClientHeader = ({
   return (
     <Container
       maxWidth={false}
-      sx={{ position: "relative", mb: 20, height: "80vh" }}
+      sx={{ position: "relative", mb: { xs: 4, md: 20 }, height: "80vh" }}
     >
       <Image
         src={image}
@@ -33,7 +33,7 @@ export const ClientHeader = ({
         <Box
           sx={{
             position: "absolute",
-            bottom: -15,
+            bottom: { xs: "-.6rem", md: -15 },
             right: "5%",
             display: "flex",
             flexDirection: "column",
@@ -46,7 +46,7 @@ export const ClientHeader = ({
             component={"h1"}
             color="white"
             fontWeight={300}
-            fontSize={"5rem"}
+            fontSize={{ xs: "3rem", md: "5rem" }}
             textAlign={"right"}
             sx={{
               margin: 0,
@@ -61,7 +61,7 @@ export const ClientHeader = ({
               display={"inline"}
               color="mwOrange"
               fontWeight={900}
-              fontSize={"6rem"}
+              fontSize={{ xs: "3.5rem", md: "6rem" }}
               textAlign={"right"}
               sx={{
                 margin: 0,
