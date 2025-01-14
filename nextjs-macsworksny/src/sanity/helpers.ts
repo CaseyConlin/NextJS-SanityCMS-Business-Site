@@ -10,9 +10,8 @@ export const sanityFetchData = async (query: string) => {
 export const getIndexPageData = async (indexSlug: string) => {
   const INDEX_QUERY = `*[ _type == "${indexSlug}"] {_id, title, clientName, slug, image}`;
 
-  console.log(INDEX_QUERY);
   const catData = await sanityFetchData(INDEX_QUERY);
-  console.log(catData);
+
   return catData.map((catDataItem: SanityDocument) => ({
     id: catDataItem._id,
     title: catDataItem.clientName ? catDataItem.clientName : catDataItem.title,

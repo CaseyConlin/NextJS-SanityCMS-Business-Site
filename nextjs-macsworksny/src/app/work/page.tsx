@@ -1,12 +1,20 @@
+import { getIndexPageData } from "@/sanity/helpers";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
-import { ContactFooter } from "@/components/UI/contactFooter/ContactFooter";
+export default async function Page() {
+  const indexData = await getIndexPageData("service");
+  const title = "Our Work";
+  const body =
+    "We have worked with a variety of clients in the past. Here are some of the projects we have completed for them.";
 
-export default function Page() {
   return (
     <>
-      <WorkPortfolio />
-      <ContactFooter />
+      <WorkPortfolio
+        index={true}
+        title={title}
+        body={body}
+        portfolioData={indexData}
+      />
     </>
   );
 }

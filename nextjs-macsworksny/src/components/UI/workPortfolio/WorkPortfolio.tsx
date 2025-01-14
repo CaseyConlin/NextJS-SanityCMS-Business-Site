@@ -9,7 +9,7 @@ export interface WorkPortfolioCardProps extends WorkCardProps {
   id: string;
 }
 type WorkPortfolioProps = {
-  index: boolean;
+  index?: boolean;
   title: string;
   body: SanityDocument | string;
   portfolioData: WorkPortfolioCardProps[];
