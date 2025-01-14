@@ -9,9 +9,9 @@ import footerpatina from "../../public/footer-patination.webp";
 import { ContactInfo } from "./UI/contactForm/ContactInfo";
 
 const pages = [
-  { name: "Services", link: "services" },
+  { name: "Services", link: "service" },
   { name: "Our Work", link: "our-work" },
-  { name: "Our Clients", link: "our-clients" },
+  { name: "Our Clients", link: "client" },
   { name: "About", link: "about" },
   { name: "Contact", link: "contact" },
 ];

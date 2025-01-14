@@ -7,6 +7,21 @@ export const sanityFetchData = async (query: string) => {
   return await client.fetch<SanityDocument[]>(query, {});
 };
 
+export const getIndexPageData = async (indexSlug: string) => {
+  const INDEX_QUERY = `*[ _type == "${indexSlug}"] {_id, title, clientName, slug, image}`;
+
+  console.log(INDEX_QUERY);
+  const catData = await sanityFetchData(INDEX_QUERY);
+  console.log(catData);
+  return catData.map((catDataItem: SanityDocument) => ({
+    id: catDataItem._id,
+    title: catDataItem.clientName ? catDataItem.clientName : catDataItem.title,
+    image: sanityUrlFor(catDataItem.image.image)?.url() || "",
+    alt: catDataItem.image.alt,
+    link: `${indexSlug}/${catDataItem.slug.current}`,
+  }));
+};
+
 export const getCarouselDataAll = async (limit?: number) => {
   const PROJECTS_QUERY = `*[
     _type == "project"

@@ -11,7 +11,7 @@ import { DesktopNavBar } from "./Desktop/DesktopNavBar";
 const pages = [
   {
     name: "Services",
-    url: "services",
+    url: "service",
     pages: [
       { name: "bridges", link: "bridges" },
       { name: "structural-steel", link: "structural-steel" },
@@ -31,7 +31,7 @@ const pages = [
   },
   {
     name: "Our Clients",
-    url: "clients",
+    url: "client",
     pages: [
       { name: "municipalities", link: "municipalities" },
       { name: "contractors", link: "contractors" },

@@ -5,13 +5,15 @@ import Image from "next/image";
 import { MWButton } from "../MWButton";
 
 export type WorkCardProps = {
+  index?: boolean;
   image: string;
   alt: string;
   title: string;
-  location: string;
+  location?: string;
   link: string;
 };
 export const WorkCard = ({
+  index,
   title,
   location,
   link,
@@ -39,30 +41,35 @@ export const WorkCard = ({
           fontFamily: "Roboto",
         }}
       >
-        <Box px={2} py={1} sx={{ background: "rgba(0, 0, 0, 0.5)" }}>
-          <Typography
-            variant="h5"
-            color="white"
-            fontWeight={600}
-            fontSize={"1.25rem"}
-            component={"h4"}
-          >
-            {location}
-          </Typography>
-          <Typography
-            variant="h4"
-            color="white"
-            fontWeight={400}
-            fontSize={"1.5rem"}
-            component={"h5"}
-          >
-            {title}
-          </Typography>
-        </Box>
+        {!index && (
+          <Box px={2} py={1} sx={{ background: "rgba(0, 0, 0, 0.5)" }}>
+            {location && (
+              <Typography
+                variant="h5"
+                color="white"
+                fontWeight={600}
+                fontSize={"1.25rem"}
+                component={"h4"}
+              >
+                {location}
+              </Typography>
+            )}
+
+            <Typography
+              variant="h4"
+              color="white"
+              fontWeight={400}
+              fontSize={"1.5rem"}
+              component={"h5"}
+            >
+              {title}
+            </Typography>
+          </Box>
+        )}
         <MWButton
           color="mwOrange"
           link={link}
-          text="View Project"
+          text={index ? title : "View Project"}
           styleProps={{ mt: 2, ml: 2 }}
         />
       </Box>

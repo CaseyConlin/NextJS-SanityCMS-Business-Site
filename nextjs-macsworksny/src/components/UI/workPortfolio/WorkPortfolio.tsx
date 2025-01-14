@@ -3,23 +3,26 @@ import { WorkCard, WorkCardProps } from "./WorkCard";
 import { MWHeading } from "../MWHeading";
 import { PortableTextBody } from "@/sanity/PortableTextBody";
 import { SanityDocument } from "next-sanity";
+import Typography from "@mui/material/Typography";
 
 export interface WorkPortfolioCardProps extends WorkCardProps {
   id: string;
 }
 type WorkPortfolioProps = {
+  index: boolean;
   title: string;
-  body: SanityDocument;
+  body: SanityDocument | string;
   portfolioData: WorkPortfolioCardProps[];
 };
 
 export const WorkPortfolio = ({
+  index,
   title,
   body,
   portfolioData,
 }: WorkPortfolioProps) => {
   return (
-    <Container maxWidth={"xl"} sx={{ my: { xs: 10 } }}>
+    <Container maxWidth={"xl"} sx={{ my: 10 }}>
       <MWHeading
         component="h2"
         variant="h2"
@@ -31,16 +34,33 @@ export const WorkPortfolio = ({
           marginLeft: { xs: 0, md: 5 },
         }}
       />
-      <PortableTextBody
-        styleProps={{
-          color: "#fff",
-          width: { xs: "100%", md: "60%" },
-          pt: 3,
-          pb: { xs: 2, md: 8 },
-          marginLeft: { xs: 0, md: 5 },
-        }}
-        text={body}
-      />
+      {typeof body === "string" ? (
+        <Typography
+          variant="body1"
+          py={1}
+          sx={{
+            color: "#fff",
+            width: { xs: "100%", md: "60%" },
+            pt: 3,
+            pb: 8,
+            marginLeft: { xs: 0, md: 5 },
+            a: { color: "#FF6600", fontWeight: 500 },
+          }}
+        >
+          {body}
+        </Typography>
+      ) : (
+        <PortableTextBody
+          styleProps={{
+            color: "#fff",
+            width: { xs: "100%", md: "60%" },
+            pt: 3,
+            pb: 8,
+            marginLeft: { xs: 0, md: 5 },
+          }}
+          text={body}
+        />
+      )}
       <Container
         maxWidth={"xl"}
         sx={{
@@ -55,6 +75,7 @@ export const WorkPortfolio = ({
       >
         {portfolioData.map((portfolioItem) => (
           <WorkCard
+            index={index}
             key={portfolioItem.id}
             image={portfolioItem.image}
             alt={portfolioItem.alt}
