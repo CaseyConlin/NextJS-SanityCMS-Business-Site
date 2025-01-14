@@ -31,7 +31,7 @@ export const ContactFooter = ({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        p: { xs: 1, md: 5 },
+        p: { xs: 1, sm: 5 },
         mt: 10,
         mb: 20,
       }}
@@ -40,7 +40,7 @@ export const ContactFooter = ({
         maxWidth="xl"
         sx={{
           backgroundColor: "rgba(255, 255, 255, 0.85)",
-          padding: { xs: 1, md: 5 },
+          padding: { xs: 1, sm: 5 },
           color: "white",
           display: "flex",
         }}
@@ -49,14 +49,14 @@ export const ContactFooter = ({
           sx={{
             width: "100%",
             display: "grid",
-            gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
+            gridTemplateColumns: { xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)" },
             columnGap: 5,
-            rowGap: { xs: 1, md: 5 },
-            px: { xs: 1, md: 3 },
-            textAlign: { xs: "center", md: "left" },
+            rowGap: { xs: 1, sm: 5 },
+            px: { xs: 1, sm: 3 },
+            textAlign: { xs: "center", sm: "left" },
           }}
         >
-          <Box sx={{ gridRow: "1", gridColumn: { xs: 1, md: "1/3" } }}>
+          <Box sx={{ gridRow: "1", gridColumn: { xs: 1, sm: "1/3" } }}>
             <MWHeading
               variant="h2"
               component="h2"
@@ -64,13 +64,13 @@ export const ContactFooter = ({
               fontWeight={400}
               text={title}
               styleProps={{
-                py: { xs: 1, md: 2 },
-                fontSize: { xs: "2rem", md: "2rem" },
-                textAlign: { xs: "center", md: "left" },
+                py: { xs: 1, sm: 2 },
+                fontSize: { xs: "2rem", sm: "2rem" },
+                textAlign: { xs: "center", sm: "left" },
               }}
             />
           </Box>
-          <Box sx={{ gridRow: "2", gridColumn: { xs: 1, md: "1/2" } }}>
+          <Box sx={{ gridRow: "2", gridColumn: { xs: 1, sm: "1/2" } }}>
             <PortableTextBody text={description} />
             <Typography color="black" pt={2}>
               <b>William Staesser</b>, Owner/Operator
@@ -91,11 +91,11 @@ export const ContactFooter = ({
           </Box>
           <Box
             sx={{
-              gridRow: { xs: "3", md: "2" },
-              gridColumn: { xs: 1, md: "2/3" },
+              gridRow: { xs: "3", sm: "2" },
+              gridColumn: { xs: 1, sm: "2/3" },
             }}
           >
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <MWHeading
                 variant="h3"
                 component="h3"
@@ -103,7 +103,7 @@ export const ContactFooter = ({
                 fontWeight={700}
                 fontSize="1.5rem"
                 text="Request a Quote"
-                styleProps={{ py: { xs: 4, md: 2 } }}
+                styleProps={{ py: { xs: 4, sm: 2 } }}
               />
               <ContactForm />
             </Grid>

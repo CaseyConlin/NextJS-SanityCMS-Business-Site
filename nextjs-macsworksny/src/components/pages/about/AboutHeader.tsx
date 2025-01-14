@@ -6,7 +6,10 @@ import bgImage from "../../../../public/lunch-atop-a-skyscraper.webp";
 
 export const AboutHeader = () => {
   return (
-    <Container maxWidth={false} sx={{ position: "relative", height: "80vh" }}>
+    <Container
+      maxWidth={false}
+      sx={{ position: "relative", height: { xs: "50vh", md: "80vh" } }}
+    >
       <Image
         src={bgImage}
         alt="Steel Bridge"
@@ -23,7 +26,7 @@ export const AboutHeader = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "15%", md: -38 },
+            bottom: { xs: "15%", md: -15 },
           }}
         >
           <Typography

@@ -18,7 +18,11 @@ export const ClientHeader = ({
   return (
     <Container
       maxWidth={false}
-      sx={{ position: "relative", mb: { xs: 4, md: 20 }, height: "80vh" }}
+      sx={{
+        position: "relative",
+        mb: { xs: 4, md: 20 },
+        height: { xs: "50vh", md: "80vh" },
+      }}
     >
       <Image
         src={image}
