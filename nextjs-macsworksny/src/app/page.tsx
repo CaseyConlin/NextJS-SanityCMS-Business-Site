@@ -10,7 +10,8 @@ import {
 import { HomeExpandingHeader } from "@/components/UI/HomeExpandingHeader";
 import { HomeAbout } from "@/components/pages/home/HomeAbout";
 import { Carousel } from "../components/UI/carousel/Carousel";
-import { getJSONLD } from "@/sanity/helpers";
+import { getJSONLDOrg } from "@/sanity/helpers";
+import mwLogo from "../../public/mw-logo-big-half-white-black-text.webp";
 
 const INDEX_QUERY = `*[_type == "indexPage"]`;
 
@@ -53,8 +54,35 @@ export default async function IndexPage() {
     };
   });
 
+  const {
+    schemaOrgDataEmail,
+    schemaOrgDataLocality,
+    schemaOrgDataName,
+    schemaOrgDataOpeningHours,
+    schemaOrgDataPostalCode,
+    schemaOrgDataRegion,
+    schemaOrgDataStreetAddress,
+    schemaOrgDataTelephone,
+    schemaOrgDataUrl,
+    seoService,
+  } = indexData[0];
+
+  const orgData = {
+    seoServices: seoService,
+    name: schemaOrgDataName,
+    openingHours: schemaOrgDataOpeningHours,
+    telephone: schemaOrgDataTelephone,
+    url: schemaOrgDataUrl,
+    email: schemaOrgDataEmail,
+    streetAddress: schemaOrgDataStreetAddress,
+    addressLocality: schemaOrgDataLocality,
+    postalCode: schemaOrgDataPostalCode,
+    addressRegion: schemaOrgDataRegion,
+    image: mwLogo.src,
+  };
+
   const projectData = await getCarouselDataAll(15);
-  const schemaData = getJSONLD();
+  const schemaData = getJSONLDOrg(orgData);
 
   return (
     <>

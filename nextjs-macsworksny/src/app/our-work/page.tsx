@@ -6,7 +6,7 @@ export default async function Page() {
   const title = "Our Work";
   const body =
     "We have worked with a variety of clients in the past. Here are some of the projects we have completed for them.";
-  console.log(indexData);
+
   return (
     <>
       <WorkPortfolio

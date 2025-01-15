@@ -7,12 +7,14 @@ import {
   sanityFetchData,
   sanityUrlFor,
   getCarouselData,
+  getJSONLDProject,
 } from "@/sanity/helpers";
 import { Carousel } from "@/components/UI/carousel/Carousel";
 import { MWHeading } from "@/components/UI/MWHeading";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
+
   const PROJET_QUERY = `*[_type == "project" && slug.current == "/work/${slug}"]`;
 
   const projectData = await sanityFetchData(PROJET_QUERY);
@@ -28,10 +30,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   const {
+    _id,
     title,
     subheading,
     features,
-    location,
+    locationCity,
+    locationState,
     bodyTitle1,
     bodyTitle2,
     body1,
@@ -45,11 +49,24 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const catProjectData = await getCarouselData(
     projectData[0].category,
-    "category"
+    "category",
+    _id
+  );
+
+  const json = getJSONLDProject(
+    title,
+    body1,
+    locationCity,
+    locationState,
+    imageGallery[0].image
   );
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+      />
       <MWHeading
         component="h3"
         fontSize="1.875rem"
@@ -62,7 +79,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <ImageGallery images={imageGallery} />
       <WorkBody
         features={features}
-        location={location}
+        location={locationCity + ", " + locationState}
         title1={bodyTitle1}
         body1={body1}
         title2={bodyTitle2}

@@ -113,7 +113,7 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
 
   return (
     <Box py={{ xs: 5, md: 0 }}>
-      <Container maxWidth={"xl"} sx={{ pt: { xs: 1, md: 0 } }}>
+      <Container maxWidth={"xl"} sx={{ pt: { xs: 1, md: 10 } }}>
         <MWHeading
           variant="h2"
           component="h2"
@@ -176,7 +176,8 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
               title={slideData.title}
               image={slideData.image}
               alt={slideData.alt}
-              location={slideData.location}
+              locationCity={slideData.locationCity}
+              locationState={slideData.locationState}
               link={slideData.link}
             />
           ))}

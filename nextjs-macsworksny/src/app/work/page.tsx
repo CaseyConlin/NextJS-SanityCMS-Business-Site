@@ -8,13 +8,11 @@ export default async function Page() {
     "We have worked with a variety of clients in the past. Here are some of the projects we have completed for them.";
 
   return (
-    <>
-      <WorkPortfolio
-        index={true}
-        title={title}
-        body={body}
-        portfolioData={indexData}
-      />
-    </>
+    <WorkPortfolio
+      index={true}
+      title={title}
+      body={body}
+      portfolioData={indexData}
+    />
   );
 }

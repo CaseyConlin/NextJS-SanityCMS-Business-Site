@@ -41,7 +41,14 @@ export const projectType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'location',
+      name: 'locationCity',
+      title: 'Location City',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'locationState',
+      title: 'Location State',
       type: 'string',
       validation: (rule) => rule.required(),
     }),

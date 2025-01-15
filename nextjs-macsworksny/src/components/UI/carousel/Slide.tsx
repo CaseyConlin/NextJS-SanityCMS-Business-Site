@@ -9,10 +9,18 @@ export type SlideProps = {
   image: string;
   alt: string;
   title: string;
-  location: string;
+  locationCity: string;
+  locationState: string;
   link: string;
 };
-export const Slide = ({ image, alt, title, location, link }: SlideProps) => {
+export const Slide = ({
+  image,
+  alt,
+  title,
+  locationCity,
+  locationState,
+  link,
+}: SlideProps) => {
   return (
     <Link href={`${link}`}>
       <Box
@@ -57,7 +65,7 @@ export const Slide = ({ image, alt, title, location, link }: SlideProps) => {
             fontWeight: 500,
           }}
         >
-          {location}
+          {locationCity}, {locationState}
           <br />
           <Typography
             component="span"
