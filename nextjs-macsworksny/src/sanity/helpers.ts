@@ -27,7 +27,7 @@ export const getCarouselDataAll = async (limit?: number) => {
     && defined(slug.current)
   ]|order(publishedAt desc)${
     limit ? `[0...${limit}]` : ""
-  }{_id, title, slug, imagesGallery[0], locationCity, locationState, publishedAt}`;
+  }{_id, title, locationCity, locationState, imagesGallery[0], slug, publishedAt}`;
 
   const catData = await sanityFetchData(PROJECTS_QUERY);
 
@@ -38,7 +38,7 @@ export const getCarouselDataAll = async (limit?: number) => {
     locationState: catDataItem.locationState,
     image: sanityUrlFor(catDataItem.imagesGallery.image)?.url() || "",
     alt: catDataItem.imagesGallery.alt,
-    link: catDataItem.slug.current,
+    link: `work/${catDataItem.slug.current}`,
   }));
 };
 
@@ -49,9 +49,8 @@ export const getCarouselData = async (
 ) => {
   const CATS_QUERY = `*[_type == 'project' && (${cats
     .map((t: string) => `'${t.toLowerCase()}' in ${field}`)
-    .join(
-      " || "
-    )})]|order(publishedAt desc)[0...12]{_id, title, locationCity, locationState, imagesGallery[0], slug}`;
+    .join(" || ")})]|order(publishedAt desc)[0...12]
+    {_id, title, locationCity, locationState, imagesGallery[0], slug}`;
 
   const catData = await sanityFetchData(CATS_QUERY);
 
@@ -63,7 +62,7 @@ export const getCarouselData = async (
       locationState: catDataItem.locationState,
       image: sanityUrlFor(catDataItem.imagesGallery.image)?.url() || "",
       alt: catDataItem.imagesGallery.alt,
-      link: catDataItem.slug.current,
+      link: `work/${catDataItem.slug.current}`,
     }))
     .filter((item: { id: string }) => item.id !== id);
 };

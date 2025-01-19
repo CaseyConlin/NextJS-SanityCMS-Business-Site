@@ -15,7 +15,7 @@ import { MWHeading } from "@/components/UI/MWHeading";
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
-  const PROJET_QUERY = `*[_type == "project" && slug.current == "/work/${slug}"]`;
+  const PROJET_QUERY = `*[_type == "project" && slug.current == "${slug}"]`;
 
   const projectData = await sanityFetchData(PROJET_QUERY);
 

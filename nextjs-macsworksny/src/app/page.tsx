@@ -15,18 +15,14 @@ import mwLogo from "../../public/mw-logo-big-half-white-black-text.webp";
 
 const INDEX_QUERY = `*[_type == "indexPage"]`;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const indexMetadata = await client.fetch<SanityDocument>(INDEX_QUERY, {});
   return {
     title: indexMetadata[0].metaTitle,
     description: indexMetadata[0].metaDescription,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
+    openGraph: {
+      images: [mwLogo.src],
+    },
   };
 }
 
