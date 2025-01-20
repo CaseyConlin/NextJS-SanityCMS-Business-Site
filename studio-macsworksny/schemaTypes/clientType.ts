@@ -6,14 +6,14 @@ export const clientType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'leadInText',
-      title: 'Lead In Text',
+      name: 'clientName',
+      title: 'Client Name',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'clientName',
-      title: 'Client Name',
+      name: 'leadInText',
+      title: 'Lead In Text',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -66,18 +66,11 @@ export const clientType = defineType({
       of: [{type: 'string'}],
       validation: (rule) => rule.required().max(8),
     }),
-    // defineField({
-    //   name: 'workTitle',
-    //   title: 'Work Area Title',
-    //   type: 'string',
-    //   validation: (rule) => rule.required(),
-    // }),
-    // defineField({
-    //   name: 'workTitleBody',
-    //   title: 'Work Area Body - 450 characters',
-    //   type: 'array',
-    //   of: [{type: 'block'}],
-    //   validation: (rule) => rule.required(),
-    // }),
+    defineField({
+      name: 'metaData',
+      title: 'Metadata',
+      type: 'metaDataType',
+      validation: (rule) => rule.required(),
+    }),
   ],
 })

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { type SanityDocument } from "next-sanity";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { client } from "@/sanity/client";
 import {
   sanityFetchData,
   sanityUrlFor,
   getCarouselDataAll,
+  getSEOMetaData,
 } from "@/sanity/helpers";
 import { HomeExpandingHeader } from "@/components/UI/HomeExpandingHeader";
 import { HomeAbout } from "@/components/pages/home/HomeAbout";
@@ -14,16 +13,10 @@ import { getJSONLDOrg } from "@/sanity/helpers";
 import mwLogo from "../../public/mw-logo-big-half-white-black-text.webp";
 
 const INDEX_QUERY = `*[_type == "indexPage"]`;
+const INDEX_METADATA_QUERY = `*[_type == "indexPage"]{metaData}`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const indexMetadata = await client.fetch<SanityDocument>(INDEX_QUERY, {});
-  return {
-    title: indexMetadata[0].metaTitle,
-    description: indexMetadata[0].metaDescription,
-    openGraph: {
-      images: [mwLogo.src],
-    },
-  };
+  return getSEOMetaData(INDEX_METADATA_QUERY);
 }
 
 export default async function IndexPage() {

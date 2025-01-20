@@ -1,6 +1,5 @@
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { SanityDocument } from "next-sanity";
-// import { client } from "@/sanity/client";
 import { ImageGallery } from "@/components/UI/imageGallery/ImageGallery";
 import { WorkBody } from "@/components/pages/work/WorkBody";
 import {
@@ -8,9 +7,20 @@ import {
   sanityUrlFor,
   getCarouselData,
   getJSONLDProject,
+  getSEOMetaData,
 } from "@/sanity/helpers";
 import { Carousel } from "@/components/UI/carousel/Carousel";
 import { MWHeading } from "@/components/UI/MWHeading";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const CLIENT_QUERY = `*[_type == "project" && slug.current == "${slug}"]`;
+  return getSEOMetaData(CLIENT_QUERY);
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;

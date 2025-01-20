@@ -3,8 +3,6 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-// import Bridge from "../../../../public/little_steelbridge_7285.jpg";
-
 export type SlideProps = {
   image: string;
   alt: string;

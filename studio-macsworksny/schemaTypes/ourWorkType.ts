@@ -40,5 +40,11 @@ export const ourWorkType = defineType({
       of: [{type: 'block'}],
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'metaData',
+      title: 'Metadata',
+      type: 'metaDataType',
+      validation: (rule) => rule.required(),
+    }),
   ],
 })

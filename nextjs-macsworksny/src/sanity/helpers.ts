@@ -38,7 +38,7 @@ export const getCarouselDataAll = async (limit?: number) => {
     locationState: catDataItem.locationState,
     image: sanityUrlFor(catDataItem.imagesGallery.image)?.url() || "",
     alt: catDataItem.imagesGallery.alt,
-    link: `work/${catDataItem.slug.current}`,
+    link: `/work/${catDataItem.slug.current}`,
   }));
 };
 
@@ -62,7 +62,7 @@ export const getCarouselData = async (
       locationState: catDataItem.locationState,
       image: sanityUrlFor(catDataItem.imagesGallery.image)?.url() || "",
       alt: catDataItem.imagesGallery.alt,
-      link: `work/${catDataItem.slug.current}`,
+      link: `/work/${catDataItem.slug.current}`,
     }))
     .filter((item: { id: string }) => item.id !== id);
 };
@@ -150,4 +150,16 @@ export const getJSONLDProject = (
     image,
   };
   return jsonLd;
+};
+
+export const getSEOMetaData = async (query: string) => {
+  const metaData = await sanityFetchData(query);
+  console.log(metaData[0].metaData.metaTitle);
+  return {
+    title: metaData[0].metaData.metaTitle,
+    description: metaData[0].metaData.metaDescription,
+    openGraph: {
+      images: sanityUrlFor(metaData[0].metaData.metaImage)?.url(),
+    },
+  };
 };

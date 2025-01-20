@@ -1,10 +1,22 @@
+import type { Metadata } from "next";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 import { ServiceHeader } from "@/components/pages/services/ServiceHeader";
 import {
   sanityFetchData,
   sanityUrlFor,
   getCarouselData,
+  getSEOMetaData,
 } from "@/sanity/helpers";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const CLIENT_QUERY = `*[_type == "service" && slug.current == "${slug}"]`;
+  return getSEOMetaData(CLIENT_QUERY);
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
