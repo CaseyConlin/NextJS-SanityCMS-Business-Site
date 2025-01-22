@@ -1,8 +1,6 @@
 import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-
-// import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
@@ -16,17 +14,6 @@ const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
 });
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 export const metadata: Metadata = {
   title: "Macs Iron Works",
@@ -42,8 +29,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className} style={{ backgroundColor: "black" }}>
-        {/* className={`${geistSans.variable} ${geistMono.variable} antialiased`} */}
-        {/* > */}
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Navbar />

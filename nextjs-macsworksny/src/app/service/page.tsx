@@ -1,5 +1,11 @@
-import { getIndexPageData } from "@/sanity/helpers";
+import { Metadata } from "next";
+import { getIndexPageData, getSEOMetaData } from "@/sanity/helpers";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const SERVICE_QUERY = `*[_type == "page" && slug.current == "service"]`;
+  return getSEOMetaData(SERVICE_QUERY);
+}
 
 export default async function Page() {
   const indexData = await getIndexPageData("service");

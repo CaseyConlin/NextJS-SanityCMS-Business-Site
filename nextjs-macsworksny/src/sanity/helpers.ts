@@ -154,7 +154,6 @@ export const getJSONLDProject = (
 
 export const getSEOMetaData = async (query: string) => {
   const metaData = await sanityFetchData(query);
-  console.log(metaData[0].metaData.metaTitle);
   return {
     title: metaData[0].metaData.metaTitle,
     description: metaData[0].metaData.metaDescription,
