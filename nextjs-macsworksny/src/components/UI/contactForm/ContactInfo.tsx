@@ -5,6 +5,8 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import EmailIcon from "@mui/icons-material/Email";
 import TextsmsIcon from "@mui/icons-material/Textsms";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 type ContactInfoProps = {
   color?:
@@ -162,6 +164,31 @@ export const ContactInfo = ({
           >
             115 Old Rte 209, Hurley, NY
           </Typography>
+        </Link>
+      </Box>
+      <Box
+        sx={{
+          gridColumn: orientation === "row" ? "1/2" : "1/5",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: orientation === "row" ? "flex-end" : "center",
+          pt: orientation === "row" ? 0 : 2,
+        }}
+      >
+        <Link
+          target="blank"
+          href="https://www.facebook.com/people/Macs-Iron-Works/61572832131229/?_rdr"
+        >
+          <FacebookIcon
+            color={color}
+            sx={{ fontSize: sizing === "large" ? "2.5rem" : "1.75rem" }}
+          />
+        </Link>
+        <Link target="blank" href="https://www.instagram.com/macsironworks/">
+          <InstagramIcon
+            color={color}
+            sx={{ fontSize: sizing === "large" ? "2.5rem" : "1.75rem" }}
+          />
         </Link>
       </Box>
     </Box>

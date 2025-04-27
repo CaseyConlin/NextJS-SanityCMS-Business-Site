@@ -63,6 +63,16 @@ export const indexPageType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'instagramHandle',
+      title: 'Instagram Handle',
+      type: 'string',
+    }),
+    defineField({
+      name: 'facebookHandle',
+      title: 'Facebook Handle',
+      type: 'string',
+    }),
+    defineField({
       name: 'schemaOrgDataName',
       title: 'SEO Business Name',
       type: 'string',
