@@ -1,9 +1,7 @@
 import Container from "@mui/material/Container";
 import { MWHeading } from "../../UI/MWHeading";
-import { Typography } from "@mui/material";
 import { SanityDocument } from "next-sanity";
 import { PortableTextBody } from "@/sanity/PortableTextBody";
-import Link from "next/link";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import MWLightLogo from "../../../../public/logos/miw-updated-logo-light.png";

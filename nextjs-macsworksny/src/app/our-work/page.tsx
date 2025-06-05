@@ -1,9 +1,5 @@
 import { Metadata } from "next";
-import {
-  getIndexPageData,
-  getSEOMetaData,
-  getCarouselDataAll,
-} from "@/sanity/helpers";
+import { getSEOMetaData, getCarouselDataAll } from "@/sanity/helpers";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
