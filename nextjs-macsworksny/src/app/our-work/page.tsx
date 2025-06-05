@@ -1,5 +1,9 @@
 import { Metadata } from "next";
-import { getIndexPageData, getSEOMetaData } from "@/sanity/helpers";
+import {
+  getIndexPageData,
+  getSEOMetaData,
+  getCarouselDataAll,
+} from "@/sanity/helpers";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -8,10 +12,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const indexData = await getIndexPageData("ourWork");
+  // const indexData = await getIndexPageData("ourWork");
   const title = "Our Work";
   const body =
-    "We have worked with a variety of clients in the past. Here are some of the projects we have completed for them.";
+    "From custom staircases in Poughkeepsie to structural framing in Beacon and curved railings in Woodstock, Macs Iron Works delivers expertly crafted steel solutions across the Hudson Valley. Our portfolio showcases work for homeowners, municipalities, architects, developers, and contractors throughout Ulster, Dutchess, Orange, and surrounding counties. Explore the featured projects below to see how we bring steel to life across residential, commercial, and civic spaces.";
+
+  const projectData = await getCarouselDataAll(15);
 
   return (
     <>
@@ -19,7 +25,7 @@ export default async function Page() {
         index={true}
         title={title}
         body={body}
-        portfolioData={indexData}
+        portfolioData={projectData}
       />
     </>
   );

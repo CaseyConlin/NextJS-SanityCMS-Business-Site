@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import bgImage from "../../../../public/lunch-atop-a-skyscraper.webp";
 
-export const AboutHeader = () => {
+export const AboutHeader = ({ title }: { title: string }) => {
   return (
     <Container
       maxWidth={false}
@@ -37,7 +37,7 @@ export const AboutHeader = () => {
             lineHeight={1}
             textAlign={"center"}
           >
-            About Macs Iron Works
+            {title}
           </Typography>
         </Box>
       </Container>

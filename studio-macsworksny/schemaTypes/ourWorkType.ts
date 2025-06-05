@@ -17,11 +17,6 @@ export const ourWorkType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'accessibleImage',
-    }),
-    defineField({
       name: 'category',
       type: 'array',
       of: [{type: 'string'}],

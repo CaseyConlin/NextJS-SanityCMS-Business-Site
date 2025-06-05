@@ -57,6 +57,7 @@ export const WorkPortfolio = ({
             pt: 3,
             pb: 8,
             marginLeft: { xs: 0, md: 5 },
+            marginBottom: 1,
           }}
           text={body}
         />

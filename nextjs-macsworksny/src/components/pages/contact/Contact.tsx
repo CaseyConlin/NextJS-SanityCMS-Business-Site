@@ -50,11 +50,31 @@ export const Contact = () => {
           textAlign={"center"}
           width={{ xs: "100%", md: "65%" }}
         >
-          We specialize in structural steel, custom staircases, railings,
-          bridges, and ornamental steelwork, working closely with our clients to
-          deliver high-quality, durable, and visually stunning results. Have a
-          question about an upcoming project or want to request a quote? We’d
-          love to hear from you.
+          Whether it’s structural fabrication, custom staircases, ornamental
+          railings, or detailed metalwork, at Macs Iron Works, we combine
+          craftsmanship and reliability in every steel project . Serving Ulster
+          County, Dutchess County, and areas in and around New Paltz, Woodstock,
+          and Poughkeepsie, NY, we partner with both homeowners and builders to
+          deliver durable, high-quality results.
+        </Typography>
+        <Typography
+          variant="body1"
+          py={1}
+          textAlign={"center"}
+          width={{ xs: "100%", md: "65%" }}
+        >
+          From new residential builds to commercial renovations, our team is
+          dedicated to meeting deadlines, staying on budget, and upholding top
+          safety standards. Let us help you enhance your space with steel
+          solutions that are built to last.
+        </Typography>
+        <Typography
+          variant="body1"
+          py={1}
+          textAlign={"center"}
+          width={{ xs: "100%", md: "65%" }}
+        >
+          Contact us today to get started.
         </Typography>
 
         <Typography
