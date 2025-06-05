@@ -11,13 +11,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const CLIENT_QUERY = `*[_type == "ourWork" && slug.current == "${slug}"]`;
   return getSEOMetaData(CLIENT_QUERY);
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+  const { slug } = await params;
   const OUR_WORK_QUERY = `*[_type == "ourWork" && slug.current == "${slug}"]`;
 
   const ourWorkData = await sanityFetchData(OUR_WORK_QUERY);
