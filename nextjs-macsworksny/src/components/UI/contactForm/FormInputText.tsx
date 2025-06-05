@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Controller, Path, PathValue, RegisterOptions } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { SxProps, Theme } from "@mui/system";
@@ -58,14 +56,8 @@ export const FormInputText = <T extends FieldValues = FieldValues>({
     },
   },
 }: FormInputTextProps<T>) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-nocheck
-  // eslint-disable-next-line
   return (
     <Controller
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-nocheck
-      // eslint-disable-next-line
       name={name}
       control={control}
       defaultValue={defaultValue}
