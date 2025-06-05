@@ -128,8 +128,6 @@ export const getJSONLDProject = (
   locationState: string,
   image: string
 ) => {
-  console.log("hey");
-  console.log(description);
   const jsonLd = {
     "@context": "http://schema.org/",
     "@type": "Project",

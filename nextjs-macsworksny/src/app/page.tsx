@@ -34,7 +34,6 @@ export default async function IndexPage() {
     link: string;
   };
 
-  console.log(indexData[0].heroImages);
   const heroImagesData = indexData[0].heroImages.map((quarter: HeroImage) => {
     const image = quarter.image.asset
       ? sanityUrlFor(quarter.image.asset)?.url() || ""
@@ -47,7 +46,6 @@ export default async function IndexPage() {
       link: quarter.link,
     };
   });
-  console.log(indexData[0].heroImages);
 
   const {
     schemaOrgDataEmail,
@@ -77,7 +75,6 @@ export default async function IndexPage() {
   };
 
   const projectData = await getCarouselDataAll(15);
-  console.log("!", orgData);
   const schemaData = getJSONLDOrg(orgData);
 
   return (

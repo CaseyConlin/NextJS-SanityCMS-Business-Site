@@ -4,8 +4,6 @@ import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const SERVICE_QUERY = `*[_type == "page" && slug.current == "service"]`;
-  const data = await getSEOMetaData(SERVICE_QUERY);
-  console.log("data", data);
   return getSEOMetaData(SERVICE_QUERY);
 }
 

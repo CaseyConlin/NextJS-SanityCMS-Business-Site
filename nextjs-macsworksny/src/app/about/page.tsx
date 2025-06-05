@@ -11,7 +11,6 @@ import {
 const ABOUT_QUERY = `*[_type == "page" && slug.current == "about"]`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  // const ABOUT_QUERY = `*[_type == "page" && slug.current == "about"]`;
   return getSEOMetaData(ABOUT_QUERY);
 }
 const aboutData = await sanityFetchData(ABOUT_QUERY);
@@ -19,8 +18,6 @@ const { title, body } = aboutData[0];
 
 const projectData = await getCarouselDataAll(15);
 export default function Page() {
-  // console.log("hey", indexData);
-
   return (
     <>
       <AboutHeader title={title} />
