@@ -11,14 +11,18 @@ import {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const CLIENT_QUERY = `*[_type == "service" && slug.current == "${slug}"]`;
   return getSEOMetaData(CLIENT_QUERY);
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const SERVICE_QUERY = `*[_type == "service" && slug.current == "${slug}"]`;
 
