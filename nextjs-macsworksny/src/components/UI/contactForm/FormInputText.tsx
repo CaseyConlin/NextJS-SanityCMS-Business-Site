@@ -1,18 +1,33 @@
-import { Controller } from "react-hook-form";
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Controller, Path, PathValue, RegisterOptions } from "react-hook-form";
 import TextField from "@mui/material/TextField";
-import { FormInputProps } from "./FormInputProps";
 import { SxProps, Theme } from "@mui/system";
 
-type FormInputTextProps = FormInputProps & {
-  requrerules?: string;
+import { Control, FieldValues } from "react-hook-form";
+
+type FormInputTextProps<T extends FieldValues = FieldValues> = {
+  name: Path<T>;
+  control: Control<T>;
+  rules?:
+    | Omit<
+        RegisterOptions<T, Path<T>>,
+        "disabled" | "setValueAs" | "valueAsNumber" | "valueAsDate"
+      >
+    | undefined;
+  label?: string;
+  requirerules?: string;
   autocomplete?: string;
   multiline?: boolean;
   rows?: number;
   styleProps?: SxProps<Theme>;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   value?: string;
+  defaultValue?: PathValue<T, Path<T>>;
 };
-export const FormInputText = ({
+export const FormInputText = <T extends FieldValues = FieldValues>({
   name,
   control,
   rules,
@@ -22,6 +37,7 @@ export const FormInputText = ({
   rows,
   onChange,
   value,
+  defaultValue,
   styleProps = {
     fieldset: {
       color: "black",
@@ -41,12 +57,18 @@ export const FormInputText = ({
       },
     },
   },
-}: FormInputTextProps) => {
+}: FormInputTextProps<T>) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-nocheck
+  // eslint-disable-next-line
   return (
     <Controller
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-nocheck
+      // eslint-disable-next-line
       name={name}
       control={control}
-      defaultValue=""
+      defaultValue={defaultValue}
       rules={rules}
       render={({
         field: { ref, ...field },
@@ -69,7 +91,7 @@ export const FormInputText = ({
           onChange={
             onChange
               ? (e) => {
-                  onChange(e.target.value);
+                  onChange(e);
                   field.onChange(e);
                 }
               : field.onChange

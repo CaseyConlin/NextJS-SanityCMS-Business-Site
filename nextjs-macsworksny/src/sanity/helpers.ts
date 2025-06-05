@@ -84,7 +84,6 @@ type OrgDetails = {
   addressLocality: string;
   postalCode: string;
   addressRegion: string;
-  seoServices: { type: string; serviceDetails: { description: string }[] }[];
   image: string;
 };
 
@@ -98,7 +97,6 @@ export const getJSONLDOrg = ({
   addressLocality,
   postalCode,
   addressRegion,
-  seoServices,
   image,
 }: OrgDetails) => {
   const jsonLd = {
@@ -117,12 +115,6 @@ export const getJSONLDOrg = ({
       addressRegion,
       addressCountry: "US",
     },
-    services: seoServices.map((service) => ({
-      type: service.type,
-      details: service.serviceDetails.map((detail) => ({
-        description: detail.description,
-      })),
-    })),
 
     image: [image],
   };
@@ -136,6 +128,8 @@ export const getJSONLDProject = (
   locationState: string,
   image: string
 ) => {
+  console.log("hey");
+  console.log(description);
   const jsonLd = {
     "@context": "http://schema.org/",
     "@type": "Project",
@@ -154,6 +148,7 @@ export const getJSONLDProject = (
 
 export const getSEOMetaData = async (query: string) => {
   const metaData = await sanityFetchData(query);
+
   return {
     title: metaData[0].metaData.metaTitle,
     description: metaData[0].metaData.metaDescription,

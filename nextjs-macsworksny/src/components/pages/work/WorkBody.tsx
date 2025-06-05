@@ -10,16 +10,6 @@ import GradingIcon from "@mui/icons-material/Grading";
 
 import { MWHeading } from "../../UI/MWHeading";
 
-// const features = [
-//   "feature 1 lorem ipsum dolor sit amet",
-//   "feature 2 lorem ipsum dolor sit amet",
-//   "feature 3 lorem ipsum dolor sit amet",
-//   "feature 4 lorem ipsum dolor sit amet",
-//   "feature 5 lorem ipsum dolor sit amet",
-//   "feature 6 lorem ipsum dolor sit amet",
-// ];
-// const location = "Poughkeepsie, NY";
-
 type WorkBodyProps = {
   features: string[];
   location: string;

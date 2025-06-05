@@ -4,6 +4,8 @@ import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const SERVICE_QUERY = `*[_type == "page" && slug.current == "service"]`;
+  const data = await getSEOMetaData(SERVICE_QUERY);
+  console.log("data", data);
   return getSEOMetaData(SERVICE_QUERY);
 }
 
@@ -11,8 +13,7 @@ export default async function Page() {
   const indexData = await getIndexPageData("service");
   const title = "Our Services";
   const body =
-    "We have worked with a variety of clients in the past. Here are some of the projects we have completed for them.";
-
+    "At Macs Iron Works, we offer expert steel fabrication services throughout the Hudson Valley, including Dutchess, Ulster, Orange, and surrounding counties. Whether you're a homeowner, contractor, architect, developer, or municipality, our team delivers structural steel, railings, staircases, and bridges built to last. Explore the services below to see how we bring strength, precision, and design to every project.";
   return (
     <>
       <WorkPortfolio

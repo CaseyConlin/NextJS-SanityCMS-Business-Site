@@ -119,7 +119,9 @@ export const ContactForm = () => {
               control={control}
               autocomplete="tel"
               label="Phone Number"
-              onChange={phoneFormat}
+              onChange={(
+                e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+              ) => phoneFormat(e.target.value)}
               value={phone}
             />
           </Box>

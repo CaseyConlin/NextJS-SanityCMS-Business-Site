@@ -3,7 +3,7 @@ import { getSEOMetaData, getCarouselDataAll } from "@/sanity/helpers";
 import { WorkPortfolio } from "@/components/UI/workPortfolio/WorkPortfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const OURWORK_QUERY = `*[_type == "page" && slug.current == "ourwork"]`;
+  const OURWORK_QUERY = `*[_type == "page" && slug.current == "our-work"]`;
   return getSEOMetaData(OURWORK_QUERY);
 }
 

@@ -21,6 +21,7 @@ export const WorkPortfolio = ({
   body,
   portfolioData,
 }: WorkPortfolioProps) => {
+  console.log(portfolioData);
   return (
     <Container maxWidth={"xl"} sx={{ my: 10 }}>
       <MWHeading

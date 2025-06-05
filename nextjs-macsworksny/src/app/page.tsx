@@ -7,6 +7,7 @@ import {
   getSEOMetaData,
 } from "@/sanity/helpers";
 import { HomeExpandingHeader } from "@/components/UI/HomeExpandingHeader";
+import imagePlaceholder from "../../public/mw-logo-big-half-white-black-text.webp";
 import { HomeAbout } from "@/components/pages/home/HomeAbout";
 import { Carousel } from "../components/UI/carousel/Carousel";
 import { getJSONLDOrg } from "@/sanity/helpers";
@@ -33,15 +34,20 @@ export default async function IndexPage() {
     link: string;
   };
 
+  console.log(indexData[0].heroImages);
   const heroImagesData = indexData[0].heroImages.map((quarter: HeroImage) => {
+    const image = quarter.image.asset
+      ? sanityUrlFor(quarter.image.asset)?.url() || ""
+      : imagePlaceholder;
     return {
       id: quarter._key,
       title: quarter.title,
-      image: sanityUrlFor(quarter.image.asset)?.url() || "",
+      image: image,
       alt: quarter.image.alt,
       link: quarter.link,
     };
   });
+  console.log(indexData[0].heroImages);
 
   const {
     schemaOrgDataEmail,
@@ -71,6 +77,7 @@ export default async function IndexPage() {
   };
 
   const projectData = await getCarouselDataAll(15);
+  console.log("!", orgData);
   const schemaData = getJSONLDOrg(orgData);
 
   return (

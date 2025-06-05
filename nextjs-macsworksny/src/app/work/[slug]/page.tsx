@@ -69,7 +69,7 @@ export default async function Page({
 
   const json = getJSONLDProject(
     title,
-    body1,
+    body1[0].children[0].text,
     locationCity,
     locationState,
     imageGallery[0].image

@@ -38,7 +38,8 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
           data-hovered={quarter.id}
           style={{
             flex: hovered && hovered === quarter.id ? 2 : 1,
-            height: window.innerWidth < 900 ? "20vh" : "100vh",
+            height:
+              global?.window && window.innerWidth < 900 ? "20vh" : "100vh",
             transition: "all .5s ease",
             display: "flex",
             alignItems: "flex-start",
