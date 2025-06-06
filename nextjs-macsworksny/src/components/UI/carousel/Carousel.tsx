@@ -141,6 +141,7 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
         {showNavigation && (
           <IconButton
             disabled={isAtStart}
+            aria-label="previous"
             onClick={() => handleScroll(-1)}
             sx={{
               position: "absolute",
@@ -185,6 +186,7 @@ export const Carousel = ({ sectionTitle, slidesData }: CarouselProps) => {
         {showNavigation && (
           <IconButton
             disabled={isAtEnd}
+            aria-label="next"
             onClick={() => handleScroll(1)}
             sx={{
               position: "absolute",

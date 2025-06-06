@@ -85,7 +85,7 @@ export const HomeExpandingHeader = ({ quarters }: HomeExpandingHeaderProps) => {
               }}
             >
               <Typography
-                variant="h4"
+                variant="h2"
                 color="mwOrange"
                 fontWeight={900}
                 fontSize={{ xs: "2rem", md: "4rem" }}

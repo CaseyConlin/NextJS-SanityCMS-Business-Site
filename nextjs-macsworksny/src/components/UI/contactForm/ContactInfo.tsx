@@ -177,6 +177,7 @@ export const ContactInfo = ({
       >
         <Link
           target="blank"
+          aria-label="Macs Iron Works Facebook"
           href="https://www.facebook.com/people/Macs-Iron-Works/61572832131229/?_rdr"
         >
           <FacebookIcon
@@ -184,7 +185,11 @@ export const ContactInfo = ({
             sx={{ fontSize: sizing === "large" ? "2.5rem" : "1.75rem" }}
           />
         </Link>
-        <Link target="blank" href="https://www.instagram.com/macsironworks/">
+        <Link
+          target="blank"
+          aria-label="Macs Iron Works Instagram"
+          href="https://www.instagram.com/macsironworks/"
+        >
           <InstagramIcon
             color={color}
             sx={{ fontSize: sizing === "large" ? "2.5rem" : "1.75rem" }}
