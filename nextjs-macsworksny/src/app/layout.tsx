@@ -29,8 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
       <body className={roboto.className} style={{ backgroundColor: "black" }}>
-        <GoogleAnalytics gaId="G-DZ4VBJFJ4C" />
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Navbar />
