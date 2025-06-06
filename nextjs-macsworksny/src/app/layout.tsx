@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className} style={{ backgroundColor: "black" }}>
+        <GoogleAnalytics gaId="G-DZ4VBJFJ4C" />
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Navbar />
