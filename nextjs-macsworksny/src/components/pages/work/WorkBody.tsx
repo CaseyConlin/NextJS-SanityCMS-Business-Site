@@ -33,13 +33,19 @@ export const WorkBody = ({
     >
       <Container
         maxWidth={"xl"}
-        sx={{ display: "flex", flexDirection: "row", gap: 10, p: 5, pb: 5 }}
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: { xs: 4, sm: 10 },
+          p: { xs: 1, sm: 5 },
+          pb: { xs: 10, sm: 5 },
+        }}
       >
         <Box
           sx={{
             display: "flex",
             justifyContent: "flex-start",
-            alignItems: "flex-end",
+            alignItems: { xs: "flex-start", sm: "flex-end" },
             flexDirection: "column",
             flex: 1 / 3,
           }}
@@ -102,8 +108,8 @@ export const WorkBody = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             flexDirection: "column",
-            borderLeft: "1px solid #FF6600",
-            pl: 4,
+            borderLeft: { xs: "none", sm: "1px solid #FF6600" },
+            pl: { xs: 0, sm: 4 },
             flex: 2 / 3,
           }}
         >

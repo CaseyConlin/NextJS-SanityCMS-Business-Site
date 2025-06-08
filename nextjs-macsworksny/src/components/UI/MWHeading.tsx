@@ -50,9 +50,11 @@ export const MWHeading = ({
                 display: "flex",
                 alignItems: "center",
                 "& svg": { fontSize: "1.75rem", mr: 1 },
+                lineHeight: { xs: 1 },
+                mb: 2,
                 ...styleProps,
               }
-            : { ...styleProps }
+            : { lineHeight: { xs: 1 }, mb: 2, ...styleProps }
         }
       >
         {icon && icon}

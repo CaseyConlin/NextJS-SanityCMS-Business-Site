@@ -87,9 +87,15 @@ export default async function Page({
         color="white"
         fontWeight={400}
         text={subheading}
-        styleProps={{ pt: 3 }}
+        styleProps={{ pl: { xs: 1, md: 0 }, pt: 3 }}
       />
-      <MWHeading component="h1" fontSize="4rem" color="mwOrange" text={title} />
+      <MWHeading
+        component="h1"
+        fontSize="4rem"
+        color="mwOrange"
+        text={title}
+        styleProps={{ pl: { xs: 1, md: 0 } }}
+      />
       <ImageGallery images={imageGallery} />
       <WorkBody
         features={features}
