@@ -87,13 +87,13 @@ export const ContactInfo = ({
           justifyContent: orientation === "row" ? "flex-start" : "center",
         }}
       >
-        <Link href="tel:+3475551234">
+        <Link href="tel:8457066905">
           <Typography
             color={fontColor}
             fontWeight={900}
             fontSize={sizing === "large" ? "1.5rem" : "1.125rem"}
           >
-            (347) 555-1234
+            (845) 706-6905
           </Typography>
         </Link>
       </Box>

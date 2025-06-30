@@ -14,7 +14,7 @@ export const getJSONLD = (data?: any) => {
     location: {
       '@type': 'Place',
       name: 'Macs Iron Works NY',
-      telephone: '(347) 835-6126',
+      telephone: '(845) 706-6905',
       url: 'https://macsironworksny.com',
       email: 'MacsIronWorks@gmail.com',
       address: {

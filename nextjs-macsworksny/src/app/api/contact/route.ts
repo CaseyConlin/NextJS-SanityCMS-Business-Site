@@ -67,7 +67,7 @@ export async function POST(request: Request): Promise<Response> {
   };
 
   const msg: sendgrid.MailDataRequired = {
-    to: "casey.conlin@gmail.com",
+    to: ["casey.conlin@gmail.com", "sendgrid.MailDataRequired"],
     from: "info@parkcrestdesign.com",
     subject: `Macs Iron Works Contact Form Submission - ${name}`,
     text: message,
