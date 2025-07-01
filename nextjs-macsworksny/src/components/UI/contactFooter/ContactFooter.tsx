@@ -76,7 +76,7 @@ export const ContactFooter = ({
               <b>William Staesser</b>, Owner/Operator
             </Typography>
             <Typography color="black">
-              <b>Jefferey McKelvey</b>, Owner/Operator
+              <b>Jeffery McKelvey</b>, Owner/Operator
             </Typography>
             <MWHeading
               variant="h3"

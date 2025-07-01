@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@mui/material/Container";
 import { MWHeading } from "../../UI/MWHeading";
 import Typography from "@mui/material/Typography";
@@ -79,21 +80,30 @@ export const Contact = () => {
 
         <Typography
           variant="h3"
-          py={1}
           textAlign={"center"}
           fontSize={"1.5rem"}
           pt={5}
         >
           <strong>William Staesser</strong>, Owner/Operator
         </Typography>
+        <Link href="tel:3478356126">
+          <Typography variant="h6" textAlign={"center"} color="mwOrange">
+            (347) 835-6126
+          </Typography>
+        </Link>
         <Typography
           variant="h3"
-          py={1}
+          pt={2}
           textAlign={"center"}
           fontSize={"1.5rem"}
         >
-          <strong>Jeffrey McKelvey</strong>, Owner/Operator
+          <strong>Jeffery McKelvey</strong>, Owner/Operator
         </Typography>
+        <Link href="tel:8457066905">
+          <Typography variant="h6" textAlign={"center"} color="mwOrange">
+            (845) 706-6905
+          </Typography>
+        </Link>
         <Container
           maxWidth="xl"
           sx={{
