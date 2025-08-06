@@ -49,7 +49,7 @@ export const getCarouselData = async (
 ) => {
   const CATS_QUERY = `*[_type == 'project' && (${cats
     .map((t: string) => `'${t.toLowerCase()}' in ${field}`)
-    .join(" || ")})]|order(publishedAt desc)[0...12]
+    .join(" || ")})]|order(publishedAt desc)
     {_id, title, locationCity, locationState, imagesGallery[0], slug}`;
 
   const catData = await sanityFetchData(CATS_QUERY);

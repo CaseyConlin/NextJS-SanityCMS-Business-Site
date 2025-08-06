@@ -74,7 +74,7 @@ export default async function IndexPage() {
     image: mwLogo.src,
   };
 
-  const projectData = await getCarouselDataAll(15);
+  const projectData = await getCarouselDataAll();
   const schemaData = getJSONLDOrg(orgData);
 
   return (
