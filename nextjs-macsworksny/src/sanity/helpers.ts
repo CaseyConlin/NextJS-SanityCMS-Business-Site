@@ -146,6 +146,7 @@ export const getJSONLDProject = (
 
 export const getSEOMetaData = async (query: string) => {
   const metaData = await sanityFetchData(query);
+  const pageSlug = metaData[0].slug?.current || "";
 
   return {
     title: metaData[0].metaData.metaTitle,
@@ -153,8 +154,8 @@ export const getSEOMetaData = async (query: string) => {
     openGraph: {
       images: sanityUrlFor(metaData[0].metaData.metaImage)?.url(),
     },
-    alternatives: {
-      canonical: `${process.env.SITE_URL}/${metaData[0].slug.current}`,
+    alternates: {
+      canonical: `${process.env.SITE_URL || "https://macsworksny.com"}/${pageSlug}`,
     },
   };
 };
