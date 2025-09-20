@@ -17,7 +17,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Macs Iron Works",
+  metadataBase: process.env.SITE_URL
+    ? new URL(process.env.SITE_URL)
+    : new URL("https://macsworksny.com"),
+  title: "Macs Iron Works Hudson Valley, NY | Steel Services & Fabrication",
   description:
     "Steel services in Hudson Valley, NY: bridges, staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
 };

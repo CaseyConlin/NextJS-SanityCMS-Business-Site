@@ -153,5 +153,8 @@ export const getSEOMetaData = async (query: string) => {
     openGraph: {
       images: sanityUrlFor(metaData[0].metaData.metaImage)?.url(),
     },
+    alternatives: {
+      canonical: `${process.env.SITE_URL}/${metaData[0].slug.current}`,
+    },
   };
 };
