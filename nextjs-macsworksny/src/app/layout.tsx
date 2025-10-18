@@ -14,6 +14,7 @@ const roboto = Roboto({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -64,7 +65,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
-      <body className={roboto.className} style={{ backgroundColor: "black" }}>
+      <body
+        className={`${roboto.variable} ${roboto.className}`}
+        style={{ backgroundColor: "black" }}
+      >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <Navbar />
