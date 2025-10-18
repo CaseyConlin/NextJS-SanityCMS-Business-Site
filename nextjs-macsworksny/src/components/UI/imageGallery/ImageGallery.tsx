@@ -59,12 +59,26 @@ export const ImageGallery = ({ images }: ImageGalleryProps) => {
       </Container>
       <Container
         maxWidth="xl"
-        sx={{ display: "flex", justifyContent: "center", gap: 4, mt: 4 }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 4,
+          mt: 4,
+          flexWrap: "wrap",
+        }}
       >
         {images.map((pic) => (
           <Button
             key={pic.id}
-            sx={{ width: "220px", height: "220px", position: "relative" }}
+            sx={{
+              width: { xs: "38vw", sm: 220 },
+              height: { xs: "38vw", sm: 220 },
+              maxWidth: 220,
+              maxHeight: 220,
+              position: "relative",
+              p: 0,
+              flexShrink: 0,
+            }}
             onClick={() => setBigImage(pic)}
           >
             <Image
