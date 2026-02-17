@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     : new URL("https://macsworksny.com"),
   title: "Macs Iron Works Hudson Valley, NY | Steel Services & Fabrication",
   description:
-    "Steel services in Hudson Valley, NY: bridges, staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
+    "Steel services in Hudson Valley, NY: staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
   alternates: {
     canonical: process.env.SITE_URL
       ? process.env.SITE_URL
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Macs Iron Works Hudson Valley, NY | Steel Services & Fabrication",
     description:
-      "Steel services in Hudson Valley, NY: bridges, staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
+      "Steel services in Hudson Valley, NY: staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
     url: process.env.SITE_URL
       ? process.env.SITE_URL
       : "https://macsworksny.com",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Macs Iron Works Hudson Valley, NY | Steel Services & Fabrication",
     description:
-      "Steel services in Hudson Valley, NY: bridges, staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
+      "Steel services in Hudson Valley, NY: staircases, ornamental railings, structural steel buildings. Trusted in Kingston, Beacon, Poughkeepsie & beyond!",
     images: ["/macs-og-image.jpg"],
   },
 };

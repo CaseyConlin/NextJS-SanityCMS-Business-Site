@@ -11,7 +11,7 @@ export default async function Page() {
   const indexData = await getIndexPageData("service");
   const title = "Our Services";
   const body =
-    "At Macs Iron Works, we offer expert steel fabrication services throughout the Hudson Valley, including Dutchess, Ulster, Orange, and surrounding counties. Whether you're a homeowner, contractor, architect, developer, or municipality, our team delivers structural steel, railings, staircases, and bridges built to last. Explore the services below to see how we bring strength, precision, and design to every project.";
+    "At Macs Iron Works, we offer expert steel fabrication services throughout the Hudson Valley, including Dutchess, Ulster, Orange, and surrounding counties. Whether you're a homeowner, contractor, architect, developer, or municipality, our team delivers structural steel, railings, and staircases built to last. Explore the services below to see how we bring strength, precision, and design to every project.";
   return (
     <>
       <WorkPortfolio

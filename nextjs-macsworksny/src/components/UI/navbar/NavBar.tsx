@@ -13,7 +13,7 @@ const pages = [
     name: "Services",
     url: "service",
     pages: [
-      { name: "bridges", link: "bridges" },
+      // { name: "bridges", link: "bridges" },
       { name: "structural-steel", link: "structural-steel" },
       { name: "staircases", link: "staircases" },
       { name: "railings", link: "railings" },
@@ -23,7 +23,7 @@ const pages = [
     name: "Our Work",
     url: "our-work",
     pages: [
-      { name: "bridges", link: "bridges" },
+      // { name: "bridges", link: "bridges" },
       { name: "structural-steel", link: "structural-steel" },
       { name: "staircases", link: "staircases" },
       { name: "railings", link: "railings" },

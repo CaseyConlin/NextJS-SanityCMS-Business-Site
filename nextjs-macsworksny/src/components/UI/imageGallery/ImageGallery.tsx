@@ -5,27 +5,6 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-// import Bridge from "../../../../public/little_steelbridge_7285.jpg";
-// import bridge1 from "../../../../public/bridge1.jpeg";
-// import bridge2 from "../../../../public/bridge2.jpeg";
-
-// const pics = [
-//   {
-//     id: 0,
-//     image: Bridge,
-//     alt: "Steel Bridge",
-//   },
-//   {
-//     id: 1,
-//     image: bridge1,
-//     alt: "Steel Bridge",
-//   },
-//   {
-//     id: 2,
-//     image: bridge2,
-//     alt: "Steel Bridge",
-//   },
-// ];
 type ImageGalleryProps = {
   images: {
     id: string;
